@@ -39,7 +39,7 @@ def organize():
             directory_path.mkdir(exist_ok=True)
             file_path.rename(directory_path.joinpath(file_path))
 
-    # if file extension not present in the dictionary than create a folder name "OTHER"
+    # if file extension not present in the dictionary than create a folder name "Others"
     try:
         os.mkdir("Others")
     except PermissionError:
