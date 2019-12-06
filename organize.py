@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+
 DIRECTORIES = {
     "HTML": [".html5", ".html", ".htm", ".xhtml"],
     "Images": [".jpeg", ".jpg", ".tiff", ".gif", ".bmp", ".png", ".bpg", "svg",
@@ -44,7 +45,7 @@ def organize():
         os.mkdir("Others")
     except PermissionError:
         print('Failed to obtain permission')
-    except:
+    except Exception:
         pass
 
     for item in os.scandir():
@@ -55,7 +56,7 @@ def organize():
                 os.rename(os.getcwd() + '/' + str(Path(item)), os.getcwd() + '/Others/' + str(Path(item)))
         except PermissionError:
             print('Failed to obtain permission')
-        except:
+        except Exception:
             pass
 
 
